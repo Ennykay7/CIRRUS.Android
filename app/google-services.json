@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "64465109008",
+    "firebase_url": "https://tlkac-api.firebaseio.com",
+    "project_id": "tlkac-api",
+    "storage_bucket": "tlkac-api.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64465109008:android:3783392380970ae0",
+        "android_client_info": {
+          "package_name": "com.example.ikkik.cirrus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64465109008-kc398f1c8e569cdfj5l25a5bl7hae6cn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ikkik.cirrus",
+            "certificate_hash": "c7d8dd520b73fb0c9ea2eec98a78e9c2950bf519"
+          }
+        },
+        {
+          "client_id": "64465109008-345k2esi1n82u1cd8btvd7efcirmhcmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd_M6RYd1rFTWobaPwNs39PctiamX2_2A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64465109008-345k2esi1n82u1cd8btvd7efcirmhcmi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "64465109008-qrl5j12243ltqh1bbbo9u0b3v70rbvai.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.XavierLian.TLKAC-Delivery-Assistant"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
