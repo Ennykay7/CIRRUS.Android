@@ -1,5 +1,6 @@
 package com.example.ikkik.cirrus.services
 
+import com.example.ikkik.cirrus.models.Delivery
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -15,23 +16,28 @@ class SVCDeliveries
             return FirebaseDatabase.getInstance()
         }
 
-    fun downloadDeliveries()
+    fun downloadDeliveries(onDone: (List<Delivery>?) -> Unit)
     {
         val today = Date()
         val formatter = SimpleDateFormat("yyyy-M-d", Locale.US)
-        database.getReference("deliveries/${formatter.format(today)}").orderByKey()
-                .addValueEventListener(
-                        object : ValueEventListener
-                        {
-                            override fun onCancelled(p0: DatabaseError)
-                            {
-                                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                            }
+        println(formatter.format(today))
+        database.getReference("deliveries/${formatter.format(today)}")
+            .orderByKey()
+            .addValueEventListener(
+                object : ValueEventListener
+                {
+                    override fun onCancelled(p0: DatabaseError)
+                    {
+                        //TODO handle the error
+                        onDone(null)
+                    }
 
-                            override fun onDataChange(p0: DataSnapshot)
-                            {
-                                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                            }
+                    override fun onDataChange(p0: DataSnapshot)
+                    {
+                        onDone(p0.children.mapNotNull {
+                            it.getValue(Delivery::class.java)
                         })
+                    }
+                })
     }
 }
